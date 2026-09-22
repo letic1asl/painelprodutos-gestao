@@ -1,0 +1,55 @@
+.filters {
+  display: flex;          /*organiza os campos lado a lado em linha*/
+  flex-wrap: wrap;        /*permite que os campos passem para a linha de baixo se não couberem*/
+  gap: 16px;              /*espaçamento de 16px entre cada campo*/
+  padding: 16px 20px;     /*espaçamento interno: 16px no topo/baixo e 20px nas laterais*/
+  background: var(--color-surface); /*cor de fundo*/
+  border: 1px solid var(--color-border);  /*borda suave ao redor*/
+  border-radius: 8px;     /*bordas arredondadas no container*/
+}
+
+/*grupo individual de campo (label + input/select)*/
+.filters__field {
+  display: flex;
+  flex-direction: column; /*coloca o <label> em cima e o <input>/<select> embaixo*/
+  gap: 6px;               /*distância entre o texto do rótulo e o campo de texto*/
+  font-size: 13px;        /*tamanho do texto do rótulo*/
+  color: var(--color-ink-soft); /*cor do texto*/
+}
+
+/*modificador específico para o campo de busca principal*/
+.filters__field--search {
+  flex: 1 1 240px;        /*cresce/encolhe conforme o espaço, com largura base inicial de 240px*/
+}
+
+/*estilização dos rótulos (labels)*/
+.filters__field label {
+  font-weight: 500;
+}
+
+/*estilização dos campos de digitação (input) e seleções (select)*/
+.filters__field input,
+.filters__field select {
+  padding: 9px 12px;      /*espaçamento interno para o texto não colar nas bordas*/
+  border: 1px solid var(--color-border);  /*borda do campo*/
+  border-radius: 6px;     /*arredondamento dos cantos do input*/
+  font-size: 14px;        /*tamanho da fonte que o usuário digita*/
+  color: var(--color-ink);/*cor do texto digitado*/
+  background: var(--color-surface); /*cor de fundo dos inputs*/
+}
+
+/*o que acontece quando o usuário clica para digitar/selecionar*/
+.filters__field input:focus,
+.filters__field select:focus {
+  outline: none;           /*remove a borda azul padrão do navegador*/
+  border-color: var(--color-primary); /*destaca a borda com a cor principal*/
+  box-shadow: 0 0 0 3px var(--color-primary-tint); /*adiciona um anel de brilho/foco suave ao redor*/
+}
+
+/*responsividade p tela menor/celular (ate 640px de largura)*/
+@media (max-width: 640px) {
+  .filters__field {
+    flex: 1 1 100%;       /*força cada campo a ocupar 100% da largura, empilhando todos na vertical*/
+  }
+}
+

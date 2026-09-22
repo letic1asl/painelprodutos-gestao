@@ -1,0 +1,56 @@
+/*container principal da paginação*/
+.pagination {
+  display: flex;
+  align-items: center;        /*centraliza o conteúdo verticalmente*/
+  justify-content: space-between; /*deixa o texto informativo de um lado (Página 1 de 5) e os botoes do outro*/
+  flex-wrap: wrap;            /*permite quebrar linha em telas pequenas*/
+  gap: 12px;                  /*espaçamento interno padrão entre os elementos*/
+  font-size: 13px;
+  color: var(--color-muted);  /*cor de texto discreta*/
+}
+
+/*segura os botões de navegação*/
+.pagination__controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;                   /*pequeno espaço de 4px entre cada botão de página*/
+}
+
+/*estilo base compartilhado pelos botões de navegação e números de página*/
+.pagination__btn,
+.pagination__page {
+  min-width: 32px;            /*largura mínima para garantir um formato quadrado ou retangular proporcional*/
+  height: 32px;               /*altura fixa*/
+  padding: 0 10px;            /*espaçamento interno lateral*/
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: 6px;         /*cantos levemente arredondados*/
+  font-size: 13px;
+  color: var(--color-ink);
+  cursor: pointer;            /*transforma o ponteiro do mouse em mãozinha ao passar por cima*/
+}
+
+/*efeito ao passar o mouse por cima dos botões ativos*/
+.pagination__btn:hover,
+.pagination__page:hover {
+  border-color: var(--color-primary); /*destaca a borda com a cor principal da aplicação*/
+}
+
+/*estado de botão desabilitado (botao "anterior" quando já está na página 1)*/
+.pagination__btn:disabled {
+  opacity: 0.4;               /*botão semi-transparente*/
+  cursor: not-allowed;        /*altera o cursor para um símbolo de bloqueio/não permitido*/
+}
+
+/*estado da página atualmente selecionada*/
+.pagination__page.is-active {
+  background: var(--color-primary);    /*preenche o fundo com a cor principal*/
+  border-color: var(--color-primary); /*mantém a borda da mesma cor do fundo*/
+  color: #fff;
+}
+
+/*indicador de reticências (...) p/ páginas ocultas (ex: 1 ... 5 6 7 ... 20)*/
+.pagination__dots {
+  padding: 0 4px;
+  color: var(--color-muted);
+}

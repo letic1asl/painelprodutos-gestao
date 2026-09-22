@@ -1,0 +1,53 @@
+.dashboard {
+  max-width: 1120px;       /*limita a largura máxima da página em telas grandes */
+  margin: 0 auto;          /*centraliza o container na horizontal */
+  padding: 48px 32px 80px; /*espaçamento interno: 48px topo, 32px laterais, 80px base */
+}
+
+/*cabeçalho da página (contém título, subtítulo e botões de ação) */
+.dashboard__header {
+  display: flex;
+  align-items: flex-end;    /*alinha os elementos na base da linha do cabeçalho */
+  justify-content: space-between; /*empurra o título para a esquerda e botões para a direita */
+  gap: 24px;               /*distância mínima de 24px entre os elementos do cabeçalho */
+  margin-bottom: 32px;     /*espaçamento externo abaixo do cabeçalho */
+  padding-bottom: 24px;    /*espaçamento interno acima da linha divisória */
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dashboard__title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 6px;          /*remove margens padrão e deixa 6px de espaço abaixo */
+  color: var(--color-ink);
+  align-items: center;      /*regra sem efeito aqui, pois o elemento não usa display flex */
+}
+
+/*subtítulo/descrição abaixo do título principal */
+.dashboard__subtitle {
+  margin: 0;                /*zera as margens padrão do parágrafo */
+  color: var(--color-muted);/*cor discreta para o texto explicativo */
+  font-size: 14px;
+}
+
+/*componentes (filtros, tabela, paginação) */
+.dashboard__content {
+  display: flex;
+  flex-direction: column;   /*empilha todos os componentes internos na vertical */
+  gap: 20px;               /*espaçamento de 20px entre cada bloco de conteúdo */
+}
+
+/*regras para celulares ou telas menores que 640px */
+@media (max-width: 640px) {
+  /*reduz os espaçamentos das bordas em telas pequenas */
+  .dashboard {
+    padding: 32px 16px 64px;
+  }
+
+  /*empilha o título e os botões do cabeçalho na vertical */
+  .dashboard__header {
+    flex-direction: column;
+    align-items: stretch;   /*estica os elementos para ocuparem toda a largura */
+  }
+}

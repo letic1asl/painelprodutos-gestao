@@ -1,0 +1,80 @@
+.product-table__wrapper {
+  overflow-x: auto;       /*add barra de rolagem horizontal se a tabela for mais larga que a tela*/
+  border: 1px solid var(--color-border);
+  border-radius: 8px;     /*bordas arredondadas na estrutura da tabela*/
+  background: var(--color-surface);
+}
+
+/*estilo base da tabela*/
+.product-table {
+  width: 100%;            /*ocupa toda a largura disponível*/
+  border-collapse: collapse; /*remove o espaçamento duplo padrão entre as bordas das células*/
+  font-size: 14px;
+}
+
+/*cabeçalho da tabela (<th>) */
+.product-table thead th {
+  text-align: left;       /*alinha o texto do cabeçalho à esquerda*/
+  padding: 12px 16px;     /*espaçamento interno das células do cabeçalho*/
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-primary-tint);
+  white-space: nowrap;    /*impede que os títulos do cabeçalho quebrem em duas linhas*/
+}
+
+/*botao de ordenação localizado no cabeçalho (ex: ordenar por preço/nome) */
+.product-table__sort {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;               /*espaço entre o texto e a seta de ordenação*/
+  background: none;       /*remove visual padrão de botão*/
+  border: none;
+  padding: 0;
+  font: inherit;          /*herda a fonte do elemento pai*/
+  font-weight: 600;
+  color: var(--color-ink);
+  cursor: pointer;        /*transforma o ponteiro do mouse em mãozinha*/
+}
+
+/*indicador visual de direção (seta */
+.product-table__arrow {
+  font-size: 12px;
+  color: var(--color-primary-dark);
+  min-width: 10px;        /*garante espaço fixo mesmo quando a seta não estiver presente*/
+  display: inline-block;
+}
+
+/*alinhamento para o cabeçalho da coluna de ações (editar/excluir)*/
+.product-table__actions-head {
+  text-align: right;      /*alinha o título "ações" à direita */
+  padding: 12px 16px;
+}
+
+/*células de dados (<tbody> <td>) */
+.product-table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-ink-soft);
+}
+
+/*linhas zebradas: aplica fundo sutil nas linhas pares (2, 4, 6...) para melhorar a leitura */
+.product-table tbody tr:nth-child(even) {
+  background: #fafbf9;
+}
+
+/*efeito ao passar o mouse sobre qualquer linha da tabela */
+.product-table tbody tr:hover {
+  background: var(--color-primary-tint); /*destaca a linha inteira */
+}
+
+/*célula contendo os botões de ação (editar/excluir) */
+.product-table__actions {
+  text-align: right;      /*empurra os botões de ação para a direita*/
+  white-space: nowrap;    /*evita que os botões fiquem um embaixo do outro*/
+}
+
+/*estilo para quando a busca ou filtro não encontrar nenhum produto */
+.product-table__empty {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--color-muted);
+}

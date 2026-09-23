@@ -5,7 +5,6 @@ Aplicação front-end em React para gestão e administração de produtos. O sis
 ## Funcionalidades
 Tabela de produtos:
 - Colunas ordenáveis com um clique no cabeçalho.
-- Exibição limpa com estados vazios e indicação visual de ordenação.
 
 Filtros combináveis:
 - Busca dinâmica por nome do produto.

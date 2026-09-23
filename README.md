@@ -96,6 +96,7 @@ src/
 │   ├── storage.js
 │   └── validation.js
 ├── App.jsx
+├── index.css
 └── main.jsx
 ```
 

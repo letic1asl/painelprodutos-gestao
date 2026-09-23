@@ -1,4 +1,4 @@
-import './Modal.css'; // estilização do modal
+import './Modal.css';
 
 export default function ConfirmDeleteModal({ product, onConfirm, onCancel }) {
   // se nenhum produto for passado para o modal, ele não renderiza nada na tela (retorna null)

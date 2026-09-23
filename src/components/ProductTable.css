@@ -56,6 +56,12 @@
   color: var(--color-ink-soft);
 }
 
+/* evita que o campo de estoque ultrapasse o espaço disponível */
+.product-table tbody td input {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
 /*linhas zebradas: aplica fundo sutil nas linhas pares (2, 4, 6...) para melhorar a leitura */
 .product-table tbody tr:nth-child(even) {
   background: #fafbf9;

@@ -13,6 +13,7 @@
 .modal {
   width: 100%;            /*ocupa a largura disponível...*/
   max-width: 420px;       /*...but nao passa de 420px de largura*/
+  box-sizing: border-box;
   background: var(--color-surface); /*cor de fundo (definida na variável do tema)*/
   border-radius: 10px;    /*bordas bem arredondadas*/
   padding: 28px;          /*espaçamento interno da caixa*/
@@ -53,6 +54,8 @@
 /*inputs e Selects dentro de modais*/
 .field input,
 .field select {
+  width: 100%;
+  box-sizing: border-box;
   padding: 10px 12px;
   border: 1px solid var(--color-border);
   border-radius: 6px;
@@ -84,6 +87,7 @@
 /*faz com que cada campo dentro do 'field-row' ocupe o mesmo espaço*/
 .field-row .field {
   flex: 1;                /*divide o espaço igualmente entre os campos da linha*/
+  min-width: 0;
 }
 
 /*botões de ação  (cancelar / confirmar)*/

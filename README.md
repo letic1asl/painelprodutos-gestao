@@ -9,7 +9,7 @@ Tabela de produtos:
 Filtros combináveis:
 - Busca dinâmica por nome do produto.
 - Filtro por categoria.
-- Filtro por status (ex: ativo, inativo, fora de estoque).
+- Filtro por status (ex: ativo, inativo).
 
 Paginação integrada:
 - Navegação entre páginas limitadas a 8 itens por página.

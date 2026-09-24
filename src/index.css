@@ -1,3 +1,4 @@
+/* define as variáveis globais de cores e fontes */
 :root {
   --color-bg: #f5f6f3;
   --color-surface: #ffffff;
@@ -11,20 +12,24 @@
   --color-danger-tint: #f8ebe7;
   --color-muted: #6f6e79;
 
+  /* define as fontes usadas no projeto */
   --font-display: 'Poppins', sans-serif;
   --font-body: 'IBM Plex Sans', sans-serif;
 }
 
+/* aplica box-sizing para facilitar o controle de tamanho dos elementos */
 * {
   box-sizing: border-box;
 }
 
+/* garante que html, body e o elemento principal ocupem toda a altura da tela */
 html,
 body,
 #root {
   height: 100%;
 }
 
+/* configura o estilo geral da página */
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -33,12 +38,14 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* define a fonte padrão para botões, campos e seletores */
 button,
 input,
 select {
   font-family: inherit;
 }
 
+/* estilo base dos botões */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -53,36 +60,47 @@ select {
   transition: background-color 0.15s ease, border-color 0.15s ease;
 }
 
+/* botão principal */
 .btn--primary {
   background: var(--color-primary);
   color: #fff;
 }
+
+/* altera a cor do botão principal ao passar o mouse */
 .btn--primary:hover {
   background: var(--color-primary-dark);
 }
 
+/* botão com aparência transparente */
 .btn--ghost {
   background: transparent;
   border-color: var(--color-border);
   color: var(--color-ink);
 }
+
+/* altera a borda do botão transparente ao passar o mouse */
 .btn--ghost:hover {
   border-color: var(--color-ink-soft);
 }
 
+/* botão usado para ações perigosas */
 .btn--danger {
   background: var(--color-danger);
   color: #fff;
 }
+
+/* escurece o botão de perigo ao passar o mouse */
 .btn--danger:hover {
   background: #93331f;
 }
 
+/* estilo de foco para navegação por teclado */
 .btn:focus-visible {
   outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
 }
 
+/* estilo base para botões que funcionam como links */
 .link-btn {
   background: none;
   border: none;
@@ -93,17 +111,24 @@ select {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+
+/* altera a cor dos links usados para ações perigosas */
 .link-btn--danger {
   color: var(--color-danger);
 }
+
+/* reduz a opacidade do link ao passar o mouse */
 .link-btn:hover {
   opacity: 0.75;
 }
+
+/* estilo de foco para links acessados pelo teclado */
 .link-btn:focus-visible {
   outline: 2px solid var(--color-primary-dark);
   outline-offset: 2px;
 }
 
+/* estilo base das etiquetas de status */
 .badge {
   display: inline-block;
   padding: 3px 10px;
@@ -111,15 +136,20 @@ select {
   font-size: 12px;
   font-weight: 500;
 }
+
+/* estilo para status ativo */
 .badge--ativo {
   background: var(--color-primary-tint);
   color: var(--color-primary-dark);
 }
+
+/* estilo para status inativo */
 .badge--inativo {
   background: var(--color-danger-tint);
   color: var(--color-danger);
 }
 
+/* reduz as animações quando o usuário prefere menos movimento */
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
